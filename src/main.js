@@ -1,3 +1,9 @@
+//Points Breakdown
+//15 Parallax Scrolling
+//10 New Background
+//10 Music
+//25 New Art Assets
+//10 FIRE UI
 let config={
     type: Phaser.CANVAS,
     width: 640,

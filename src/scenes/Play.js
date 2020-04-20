@@ -72,6 +72,44 @@ class Play extends Phaser.Scene
         }
         this.scoreLeft=this.add.text(69, 54, this.p1Score, scoreConfig);
 
+        //score
+        this.highscore=0;
+
+        //score display
+        let highscoreConfig=
+        {
+            fontFamily: 'Courier',
+            fontSize: '28px',
+            backgroundColor: '#F3B141',
+            color: '#843605',
+            align: 'right',
+            padding:
+            {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 100
+        }
+        this.highscoreLeft=this.add.text(481, 54, this.highscore, highscoreConfig);
+
+
+        //fire display
+        let fireConfig=
+        {
+            fontFamily: 'Courier',
+            fontSize: '28px',
+            backgroundColor: '#F3B141',
+            color: '#843605',
+            align: 'right',
+            padding:
+            {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 70
+        }
+        this.add.text(280, 54, "FIRE", fireConfig);
+
         //game over flag
         this.gameOver=false
 
@@ -82,6 +120,8 @@ class Play extends Phaser.Scene
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0, 5);
             this.add.text(game.config.width/2, game.config.height/2+64, '(F)ire to Restart or <- for Menu', scoreConfig).setOrigin(0, 5);
             this.gameOver=true;
+            this.highscore=this.scoreLeft;
+            this.highscoreLeft=this.scoreLeft;
         }, null, this);
 
         //play music
